@@ -1,0 +1,12 @@
+version: "3"
+services:
+  mongo:
+    container_name: learn-mongo_mongo
+    image: library/mongo:4.1
+    restart: always
+    volumes:
+      - ./mongo-data/:/data/db
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
